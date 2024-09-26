@@ -1,0 +1,17 @@
+apiVersion: velero.io/v1
+kind: Restore
+metadata:
+  name: restore-rhel9-1
+  namespace: openshift-adp
+spec:
+  backupName: backup-rhel9-1
+  includedResources: []
+#  namespaceMapping:
+#    demo-oadp: demo  # Restore into a different ns
+  excludedResources:
+  - nodes
+  - events
+  - events.events.k8s.io
+  - backups.velero.io
+  - restores.velero.io
+  restorePVs: true

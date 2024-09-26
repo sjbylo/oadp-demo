@@ -1,0 +1,11 @@
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  labels:
+    bucket-provisioner: openshift-storage.ceph.rook.io-bucket
+  name: my-backup-bucket
+  namespace: demo
+spec:
+  bucketName: my-backup-bucket
+  objectBucketName: obc-demo-my-backup-bucket
+  storageClassName: ocs-storagecluster-ceph-rgw
