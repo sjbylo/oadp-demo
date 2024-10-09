@@ -22,7 +22,7 @@ oc get vmi $n -n demo-oadp
 sed "s/rhel9-1/$n/g" backup.yaml 
 sed "s/rhel9-1/$n/g" backup.yaml | oc apply -f - -n openshift-adp
 sleep 2
-time oc -n openshift-adp wait --for=jsonpath='{.status.phase}'=Completed backup/backup-$n --timeout=40s
+time oc -n openshift-adp wait --for=jsonpath='{.status.phase}'=Completed backup.velero.io/backup-$n --timeout=40s
 sleep 2
 
 # Delete
@@ -33,7 +33,7 @@ sleep 1
 sed "s/rhel9-1/$n/g" restore.yaml 
 sed "s/rhel9-1/$n/g" restore.yaml | oc apply -f - -n openshift-adp
 sleep 1
-time oc -n openshift-adp wait --for=jsonpath='{.status.phase}'=Completed restore/restore-$n --timeout=40s
+time oc -n openshift-adp wait --for=jsonpath='{.status.phase}'=Completed restore.velero.io/restore-$n --timeout=40s
 sleep 2
 ##virtctl start $n
 oc get vmi $n -n demo-oadp

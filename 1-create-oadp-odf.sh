@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 # Script to configure OADP using ODF/MCG object storage
 # This script should work on any cluster with ODF and MCG configured 
 
