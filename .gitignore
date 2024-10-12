@@ -1,1 +1,3 @@
 credentials-velero
+backup.yaml
+restore.yaml

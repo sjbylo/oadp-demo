@@ -1,7 +1,7 @@
 apiVersion: velero.io/v1
 kind: Backup
 metadata:
-  name: backup-rhel9-21920
+  name: backup-rhel9-14550
   labels:
     velero.io/storage-location: default
   namespace: openshift-adp
@@ -9,9 +9,9 @@ spec:
   hooks: {}
   orLabelSelectors:
   - matchLabels:
-      app: rhel9-21920
+      app: rhel9-14550
   - matchLabels:
-      kubevirt.io/domain: rhel9-21920
+      kubevirt.io/domain: rhel9-14550
   includedNamespaces:
   - demo-oadp
   storageLocation: my-dpa-1

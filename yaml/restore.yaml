@@ -1,10 +1,10 @@
 apiVersion: velero.io/v1
 kind: Restore
 metadata:
-  name: restore-rhel9-21920
+  name: restore-rhel9-14550
   namespace: openshift-adp
 spec:
-  backupName: backup-rhel9-21920
+  backupName: backup-rhel9-14550
   includedResources: []
 #  namespaceMapping:
 #    demo-oadp: demo  # Restore into a different ns
