@@ -10,7 +10,7 @@ spec:
  backupName: NAME
 END
 
-oc get backup -n openshift-adp -oname | cut -d/ -f2 | while read name
+oc get backups.velero.io -n openshift-adp -oname | cut -d/ -f2 | while read name
 do
 	echo $name
 	cat /tmp/.DeleteBackupRequest.template.yaml | sed -e "s/NAME/$name/g" -e "s/deletebackuprequest/deletebackuprequest-$name/g" | oc apply -f - 
